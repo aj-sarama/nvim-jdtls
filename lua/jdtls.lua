@@ -1364,7 +1364,8 @@ M.load_pde = function()
     vim.lsp.log.info(vim.inspect(response))
   end
 
-  client.request("workspace/executeCommand", { "java.pde.reloadTargetPlatform", target_uri }, log_response, 0)
+  client.request("workspace/executeCommand", { command = "java.pde.reloadTargetPlatform", arguments = { target_uri } },
+    log_response, 0)
 end
 
 return M
