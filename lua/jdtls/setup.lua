@@ -228,6 +228,7 @@ local function add_commands(client, bufnr, opts)
   create_cmd("JdtBytecode", "lua require('jdtls').javap()")
   create_cmd("JdtJshell", "lua require('jdtls').jshell()")
   create_cmd("JdtRestart", "lua require('jdtls.setup').restart()")
+  create_cmd("JdtPde", "lua require('jdtls').load_pde()")
   local ok, dap = pcall(require, 'dap')
   if ok then
     local command_provider = client.server_capabilities.executeCommandProvider or {}
